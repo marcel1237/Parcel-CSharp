@@ -96,7 +96,7 @@
                             <Button Content="Save File" Click="OnSaveFile" Background="#333333" Foreground="White"/>
                             <TextBlock Text="Editor Mode: C# / C++ / QML / Python" VerticalAlignment="Center" Foreground="#858585"/>
                         </StackPanel>
-                        <TextBox Grid.Row="1" x:Name="CodeEditorBox" Text="// Parcel C# Code Editor&#xA;using System;&#xA;&#xA;namespace ParcelDesktop&#xA;{&n;    public class SampleService&#xA;    {&#xA;        public void Run() => Console.WriteLine(&quot;Parcel Industrial Editor active.&quot;);&#xA;    }&#xA;}" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Background="#1E1E1E" Foreground="#9CDCFE" BorderBrush="#3F3F3F"/>
+                        <TextBox Grid.Row="1" x:Name="CodeEditorBox" Text="// Parcel C# Code Editor&#xA;using System;&#xA;&#xA;namespace ParcelDesktop&#xA;{&#x0a;    public class SampleService&#xA;    {&#xA;        public void Run() => Console.WriteLine(&quot;Parcel Industrial Editor active.&quot;);&#xA;    }&#xA;}" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Background="#1E1E1E" Foreground="#9CDCFE" BorderBrush="#3F3F3F"/>
                     </Grid>
                 </TabItem>
 

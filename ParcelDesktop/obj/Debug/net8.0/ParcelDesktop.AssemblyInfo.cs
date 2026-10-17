@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParcelDesktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fef68dfc84469b521dfaf75d7730fd9e9e93c46")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e595593ae743a5243be771c55904b9d354dc850")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParcelDesktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParcelDesktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

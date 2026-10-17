@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParcelAIAgent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8828aeead13e2002c90979060ea33e249462043b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e595593ae743a5243be771c55904b9d354dc850")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParcelAIAgent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParcelAIAgent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
