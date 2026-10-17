@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ParcelDesktop.MainWindow"
+        Title="Parcel C# - Industrial Development Toolkit"
+        Width="1200" Height="800"
+        Background="#1E1E1E" Foreground="#FFFFFF">
+    <Grid ColumnDefinitions="250, *" RowDefinitions="50, *">
+        <!-- Header -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#2D2D2D" BorderBrush="#3F3F3F" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal" Margin="15,0" VerticalAlignment="Center">
+                <TextBlock Text="⚡ Parcel C# (Linux Industrial Toolkit)" FontSize="18" FontWeight="Bold" Foreground="#4EC9B0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Sidebar / Navigation -->
+        <Border Grid.Row="1" Grid.Column="0" Background="#252526" BorderBrush="#3F3F3F" BorderThickness="0,0,1,0">
+            <StackPanel Margin="10" Spacing="5">
+                <Button Content="📊 Dashboard" Click="OnDashboardClick" HorizontalAlignment="Stretch" Background="#333333" Foreground="White" Margin="0,2"/>
+                <Button Content="🤖 SS AI Agent" Click="OnAIAgentClick" HorizontalAlignment="Stretch" Background="#333333" Foreground="White" Margin="0,2"/>
+                <Button Content="🗄️ Database Explorer" Click="OnDatabaseClick" HorizontalAlignment="Stretch" Background="#333333" Foreground="White" Margin="0,2"/>
+                <Button Content="📁 Package Explorer" Click="OnExplorerClick" HorizontalAlignment="Stretch" Background="#333333" Foreground="White" Margin="0,2"/>
+                <Button Content="⚙️ Settings" Click="OnSettingsClick" HorizontalAlignment="Stretch" Background="#333333" Foreground="White" Margin="0,2"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Content Area -->
+        <Border Grid.Row="1" Grid.Column="1" Background="#1E1E1E" Padding="20">
+            <StackPanel Spacing="15">
+                <TextBlock x:Name="ViewTitleText" Text="Dashboard View" FontSize="22" FontWeight="Bold" Foreground="#9CDCFE"/>
+                <TextBlock x:Name="ViewContentText" Text="Welcome to Parcel C# Industrial Development Toolkit. All systems operational on Linux." FontSize="14" Foreground="#D4D4D4" TextWrapping="Wrap"/>
+
+                <Border Background="#2D2D2D" Padding="15" CornerRadius="5" BorderBrush="#3F3F3F" BorderThickness="1">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="SS AI Agent Console & QLM Status" FontWeight="Bold" Foreground="#4EC9B0"/>
+                        <TextBox x:Name="AgentInputTextBox" Text="Analyze project architecture and ensure industrial resilience." Background="#1E1E1E" Foreground="White" BorderBrush="#3F3F3F"/>
+                        <Button Content="Run Agent Analysis" Click="OnRunAgentClick" Background="#007ACC" Foreground="White"/>
+                        <TextBox x:Name="AgentOutputTextBox" Text="Ready for AI execution..." IsReadOnly="True" AcceptsReturn="True" Height="150" Background="#1E1E1E" Foreground="#CE9178" BorderBrush="#3F3F3F"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

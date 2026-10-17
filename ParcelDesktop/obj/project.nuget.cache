@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "IDW0CIgTU58rJPkONSMrZBFHMFvwEX4+7junEzIJ9Mle6mr372287gekrZYEE2VqSJW3MFCAxJ3zRXCJYjHmJg==",
+  "success": true,
+  "projectFilePath": "/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelDesktop/ParcelDesktop.csproj",
+  "expectedPackageFiles": [
+    "/home/marcel/.nuget/packages/microsoft.data.sqlite/8.0.2/microsoft.data.sqlite.8.0.2.nupkg.sha512",
+    "/home/marcel/.nuget/packages/microsoft.data.sqlite.core/8.0.2/microsoft.data.sqlite.core.8.0.2.nupkg.sha512",
+    "/home/marcel/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.6/sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
+    "/home/marcel/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
+    "/home/marcel/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
+    "/home/marcel/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.6/sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
+    "/home/marcel/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

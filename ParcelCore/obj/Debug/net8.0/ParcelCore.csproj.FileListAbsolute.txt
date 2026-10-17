@@ -1,0 +1,12 @@
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/bin/Debug/net8.0/ParcelCore.deps.json
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/bin/Debug/net8.0/ParcelCore.dll
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/bin/Debug/net8.0/ParcelCore.pdb
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/ParcelCore.GeneratedMSBuildEditorConfig.editorconfig
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/ParcelCore.AssemblyInfoInputs.cache
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/ParcelCore.AssemblyInfo.cs
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/ParcelCore.csproj.CoreCompileInputs.cache
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/ParcelCore.sourcelink.json
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/ParcelCore.dll
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/refint/ParcelCore.dll
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/ParcelCore.pdb
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelCore/obj/Debug/net8.0/ref/ParcelCore.dll
