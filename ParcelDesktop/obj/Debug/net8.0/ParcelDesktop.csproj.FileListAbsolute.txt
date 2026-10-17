@@ -45,3 +45,4 @@
 /home/marcel/Parcel-Suite/Parcel-CSharp/ParcelDesktop/obj/Debug/net8.0/ParcelDesktop.pdb
 /home/marcel/Parcel-Suite/Parcel-CSharp/ParcelDesktop/obj/Debug/net8.0/ParcelDesktop.genruntimeconfig.cache
 /home/marcel/Parcel-Suite/Parcel-CSharp/ParcelDesktop/obj/Debug/net8.0/ref/ParcelDesktop.dll
+/home/marcel/Parcel-Suite/Parcel-CSharp/ParcelDesktop/obj/Debug/net8.0/Avalonia/Resources.Inputs.cache
