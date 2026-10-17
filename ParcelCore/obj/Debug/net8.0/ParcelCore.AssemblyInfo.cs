@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParcelCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e595593ae743a5243be771c55904b9d354dc850")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e84b674c609df6b2c69299ac4e886507298864a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParcelCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParcelCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
