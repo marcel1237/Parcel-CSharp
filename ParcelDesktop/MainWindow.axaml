@@ -1,72 +1,79 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="ParcelDesktop.MainWindow"
-        Title="Parcel C# - Industrial Development Toolkit (Full GUI)"
-        Width="1400" Height="900"
+        Title="Parcel C# - Industrial Development Toolkit (Full Parity)"
+        Width="1500" Height="950"
         Background="#1E1E1E" Foreground="#FFFFFF">
-    <Grid RowDefinitions="45, *" ColumnDefinitions="240, *">
-        <!-- Top Header -->
+    <Grid RowDefinitions="45, *" ColumnDefinitions="250, *">
+        <!-- Top Header (ProjectHeader.hpp parity) -->
         <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#2D2D2D" BorderBrush="#3F3F3F" BorderThickness="0,0,0,1">
             <StackPanel Orientation="Horizontal" Margin="15,0" VerticalAlignment="Center" Spacing="15">
                 <TextBlock Text="⚡ Parcel C# (Industrial AI Toolkit)" FontSize="16" FontWeight="Bold" Foreground="#4EC9B0" VerticalAlignment="Center"/>
                 <TextBlock Text="|" Foreground="#666666" VerticalAlignment="Center"/>
-                <TextBlock x:Name="StatusText" Text="Status: All Systems Operational (SQLite + QLM + AI Agent)" FontSize="12" Foreground="#9CDCFE" VerticalAlignment="Center"/>
+                <TextBlock x:Name="StatusText" Text="Status: All Systems Operational (Qt-to-Avalonia 1:1 Parity)" FontSize="12" Foreground="#9CDCFE" VerticalAlignment="Center"/>
             </StackPanel>
         </Border>
 
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar Navigation (MainWindow.hpp dock parity) -->
         <Border Grid.Row="1" Grid.Column="0" Background="#252526" BorderBrush="#3F3F3F" BorderThickness="0,0,1,0">
             <ScrollViewer>
-                <StackPanel Margin="10" Spacing="4">
-                    <TextBlock Text="NAVIGATION" FontSize="10" FontWeight="Bold" Foreground="#858585" Margin="5,5,5,2"/>
+                <StackPanel Margin="10" Spacing="3">
+                    <TextBlock Text="WORKSPACE" FontSize="10" FontWeight="Bold" Foreground="#858585" Margin="5,5,5,2"/>
                     <Button Content="📊 Dashboard" Click="OnNavDashboard" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
-                    <Button Content="🤖 SS AI Console" Click="OnNavAIConsole" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
-                    <Button Content="🧠 Gemini / OpenAI" Click="OnNavLLMClients" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
-
-                    <TextBlock Text="DEVELOPMENT" FontSize="10" FontWeight="Bold" Foreground="#858585" Margin="5,10,5,2"/>
-                    <Button Content="📝 Code Editor &amp; Designer" Click="OnNavEditor" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
                     <Button Content="📁 Package Explorer" Click="OnNavExplorer" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
-                    <Button Content="🗄️ Database &amp; DBMS" Click="OnNavDatabase" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="📝 Code &amp; Designer Editor" Click="OnNavEditor" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
 
-                    <TextBlock Text="TOOLS &amp; VERSIONING" FontSize="10" FontWeight="Bold" Foreground="#858585" Margin="5,10,5,2"/>
-                    <Button Content="🔀 Git &amp; Versions" Click="OnNavGit" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
-                    <Button Content="💾 Backups &amp; Saves" Click="OnNavSaves" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
-                    <Button Content="💻 Terminal &amp; Shell" Click="OnNavTerminal" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <TextBlock Text="AI &amp; AGENT QLM" FontSize="10" FontWeight="Bold" Foreground="#858585" Margin="5,10,5,2"/>
+                    <Button Content="🤖 SS AI Agent Console" Click="OnNavAIConsole" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="🌐 Gemini &amp; OpenAI Client" Click="OnNavLLMClients" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+
+                    <TextBlock Text="DATA &amp; VCS" FontSize="10" FontWeight="Bold" Foreground="#858585" Margin="5,10,5,2"/>
+                    <Button Content="🗄️ DBMS Explorer" Click="OnNavDatabase" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="🔀 Git &amp; Versions Pane" Click="OnNavGit" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="💾 Saves &amp; Backups" Click="OnNavSaves" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+
+                    <TextBlock Text="SYSTEM &amp; SHELL" FontSize="10" FontWeight="Bold" Foreground="#858585" Margin="5,10,5,2"/>
+                    <Button Content="💻 Terminal Pane" Click="OnNavTerminal" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="📜 Shell Scripting" Click="OnNavShellScripting" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="🌐 Browser &amp; WebStudio" Click="OnNavBrowser" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
 
                     <TextBlock Text="FRAMEWORKS &amp; OS" FontSize="10" FontWeight="Bold" Foreground="#858585" Margin="5,10,5,2"/>
-                    <Button Content="🐧 KDE / GTK / .NET" Click="OnNavFrameworks" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
-                    <Button Content="🌐 WebStudio / Browser" Click="OnNavWeb" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="🐧 KDE Manager" Click="OnNavKDE" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="🐧 GTK (2/3/4) Manager" Click="OnNavGTK" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="🔷 .NET Manager" Click="OnNavDotNet" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
                     <Button Content="🔍 Inspection &amp; Logcat" Click="OnNavInspection" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
-                    <Button Content="⚙️ Settings" Click="OnNavSettings" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
+                    <Button Content="⚙️ Settings View" Click="OnNavSettings" HorizontalAlignment="Stretch" Background="#333333" Foreground="White"/>
                 </StackPanel>
             </ScrollViewer>
         </Border>
 
-        <!-- Main Content Area with Dynamic Panes -->
+        <!-- Main Content Area with Full 1:1 Parity Tabs -->
         <Border Grid.Row="1" Grid.Column="1" Background="#1E1E1E" Padding="15">
             <TabControl x:Name="MainTabControl" Background="#1E1E1E">
-                <!-- Tab 1: Dashboard -->
+                <!-- Tab 0: DashboardView -->
                 <TabItem Header="Dashboard">
                     <ScrollViewer>
                         <StackPanel Spacing="15" Margin="10">
-                            <TextBlock Text="Parcel C# Industrial Workspace" FontSize="22" FontWeight="Bold" Foreground="#9CDCFE"/>
-                            <TextBlock Text="Welcome to the high-performance C# port of Parcel C++. This environment integrates QLM rule engines, SQLite session persistence, incremental backups, Git integration, and multi-agent AI orchestration." TextWrapping="Wrap" Foreground="#D4D4D4"/>
+                            <TextBlock Text="Parcel C++ to C# Parity Dashboard" FontSize="22" FontWeight="Bold" Foreground="#9CDCFE"/>
+                            <TextBlock Text="Direct translation of Parcel C++ Qt 6 architecture into high-performance .NET 8 / Avalonia UI." Foreground="#D4D4D4"/>
 
                             <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto" Margin="0,10,0,0">
                                 <Border Grid.Row="0" Grid.Column="0" Background="#2D2D2D" Padding="15" Margin="5" CornerRadius="4" BorderBrush="#3F3F3F" BorderThickness="1">
                                     <StackPanel Spacing="8">
-                                        <TextBlock Text="📊 System Health" FontWeight="Bold" Foreground="#4EC9B0"/>
-                                        <TextBlock Text="• Core: .NET 8.0 Active" Foreground="#CCCCCC"/>
-                                        <TextBlock Text="• SQLite Persistence: Connected" Foreground="#CCCCCC"/>
-                                        <TextBlock Text="• QLM Engine: Rules Loaded" Foreground="#CCCCCC"/>
+                                        <TextBlock Text="📊 Core Subsystems" FontWeight="Bold" Foreground="#4EC9B0"/>
+                                        <TextBlock Text="• NavigationController: Active" Foreground="#CCCCCC"/>
+                                        <TextBlock Text="• PersistenceService (SQLite): Connected" Foreground="#CCCCCC"/>
+                                        <TextBlock Text="• BackupService (Snapshots): Ready" Foreground="#CCCCCC"/>
+                                        <TextBlock Text="• GitService (VCS): Synchronized" Foreground="#CCCCCC"/>
                                     </StackPanel>
                                 </Border>
                                 <Border Grid.Row="0" Grid.Column="1" Background="#2D2D2D" Padding="15" Margin="5" CornerRadius="4" BorderBrush="#3F3F3F" BorderThickness="1">
                                     <StackPanel Spacing="8">
-                                        <TextBlock Text="🤖 Active AI Engines" FontWeight="Bold" Foreground="#4EC9B0"/>
-                                        <TextBlock Text="• SS AI Local Agent: Online" Foreground="#CCCCCC"/>
-                                        <TextBlock Text="• Gemini / OpenAI Client: Ready" Foreground="#CCCCCC"/>
-                                        <TextBlock Text="• WebSearch Service: Enabled" Foreground="#CCCCCC"/>
+                                        <TextBlock Text="🤖 SS AI Agent &amp; QLM" FontWeight="Bold" Foreground="#4EC9B0"/>
+                                        <TextBlock Text="• QLMEngine: Rules Loaded" Foreground="#CCCCCC"/>
+                                        <TextBlock Text="• LocalAgent (Reasoning): Online" Foreground="#CCCCCC"/>
+                                        <TextBlock Text="• Gemini / OpenAI Clients: Configured" Foreground="#CCCCCC"/>
+                                        <TextBlock Text="• WebSearch &amp; FilePatcher: Active" Foreground="#CCCCCC"/>
                                     </StackPanel>
                                 </Border>
                             </Grid>
@@ -74,88 +81,150 @@
                     </ScrollViewer>
                 </TabItem>
 
-                <!-- Tab 2: SS AI Agent -->
-                <TabItem Header="SS AI Agent">
-                    <StackPanel Spacing="12" Margin="10">
-                        <TextBlock Text="SS AI Agent &amp; QLM Console" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
-                        <TextBlock Text="Execute prompt analysis, leverage QLM standards, and run automated local reasoning." Foreground="#D4D4D4"/>
-
-                        <TextBox x:Name="AgentInputBox" Text="Analyze project architecture and ensure industrial resilience." Background="#252526" Foreground="White" BorderBrush="#3F3F3F" Height="60" AcceptsReturn="True"/>
-                        <Button Content="Execute Agent Reasoning" Click="OnRunAgent" Background="#007ACC" Foreground="White" FontWeight="Bold"/>
-
-                        <TextBlock Text="Execution Output:" FontWeight="Bold" Foreground="#9CDCFE"/>
-                        <TextBox x:Name="AgentOutputBox" Text="Ready for execution..." IsReadOnly="True" AcceptsReturn="True" Height="300" Background="#252526" Foreground="#CE9178" BorderBrush="#3F3F3F"/>
-                    </StackPanel>
+                <!-- Tab 1: Package Explorer -->
+                <TabItem Header="Package Explorer">
+                    <Grid ColumnDefinitions="300, *">
+                        <Border Grid.Column="0" BorderBrush="#3F3F3F" BorderThickness="0,0,1,0" Padding="10">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="📁 Project Package Explorer" FontWeight="Bold" Foreground="#4EC9B0"/>
+                                <ListBox x:Name="PackageExplorerList" Height="500" Background="#252526" Foreground="White">
+                                    <ListBoxItem Content="src/core/NavigationController.cs"/>
+                                    <ListBoxItem Content="src/service/PersistenceService.cs"/>
+                                    <ListBoxItem Content="src/service/BackupService.cs"/>
+                                    <ListBoxItem Content="src/service/GitService.cs"/>
+                                    <ListBoxItem Content="src/ai/LocalAgent.cs"/>
+                                    <ListBoxItem Content="src/ai/QLMEngine.cs"/>
+                                    <ListBoxItem Content="QLM/agent_core.json"/>
+                                    <ListBoxItem Content="QLM/system_info.json"/>
+                                </ListBox>
+                                <Button Content="Refresh Explorer" Click="OnRefreshExplorer" Background="#333333" Foreground="White"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Column="1" Padding="15">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="File Inspector &amp; Properties" FontWeight="Bold" Foreground="#9CDCFE"/>
+                                <TextBox Text="Select a file from the explorer tree to inspect its properties and metadata." IsReadOnly="True" Height="400" Background="#252526" Foreground="#D4D4D4" BorderBrush="#3F3F3F"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
                 </TabItem>
 
-                <!-- Tab 3: Code Editor -->
+                <!-- Tab 2: Code Editor & Designer -->
                 <TabItem Header="Code Editor">
                     <Grid RowDefinitions="Auto, *">
                         <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="5">
                             <Button Content="Open File" Click="OnOpenFile" Background="#333333" Foreground="White"/>
                             <Button Content="Save File" Click="OnSaveFile" Background="#333333" Foreground="White"/>
-                            <TextBlock Text="Editor Mode: C# / C++ / QML / Python" VerticalAlignment="Center" Foreground="#858585"/>
+                            <Button Content="Designer View" Click="OnToggleDesigner" Background="#333333" Foreground="White"/>
+                            <TextBlock Text="Mode: High-Performance C# Editor" VerticalAlignment="Center" Foreground="#858585"/>
                         </StackPanel>
-                        <TextBox Grid.Row="1" x:Name="CodeEditorBox" Text="// Parcel C# Code Editor&#xA;using System;&#xA;&#xA;namespace ParcelDesktop&#xA;{&#x0a;    public class SampleService&#xA;    {&#xA;        public void Run() => Console.WriteLine(&quot;Parcel Industrial Editor active.&quot;);&#xA;    }&#xA;}" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Background="#1E1E1E" Foreground="#9CDCFE" BorderBrush="#3F3F3F"/>
+                        <TextBox Grid.Row="1" x:Name="CodeEditorBox" Text="// Parcel C# High-Performance Code Editor&#xA;using System;&#xA;&#xA;namespace ParcelDesktop&#xA;{&#x0a;    public class IndustrialEditor&#xA;    {&#xA;        public void Initialize() => Console.WriteLine(&quot;Editor active.&quot;);&#xA;    }&#xA;}" AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" Background="#1E1E1E" Foreground="#9CDCFE" BorderBrush="#3F3F3F"/>
                     </Grid>
                 </TabItem>
 
-                <!-- Tab 4: Database & Explorer -->
-                <TabItem Header="Database &amp; Explorer">
+                <!-- Tab 3: SS AI Agent Console -->
+                <TabItem Header="SS AI Agent">
+                    <StackPanel Spacing="12" Margin="10">
+                        <TextBlock Text="SS AI Agent &amp; QLM Console" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
+                        <TextBlock Text="Extraordinary Shell Intelligence &amp; Multi-Agent Orchestration." Foreground="#D4D4D4"/>
+
+                        <TextBox x:Name="AgentInputBox" Text="Analyze project architecture and ensure industrial resilience." Background="#252526" Foreground="White" BorderBrush="#3F3F3F" Height="70" AcceptsReturn="True"/>
+                        <Button Content="Run Agent Reasoning" Click="OnRunAgent" Background="#007ACC" Foreground="White" FontWeight="Bold"/>
+
+                        <TextBlock Text="Agent Execution Output:" FontWeight="Bold" Foreground="#9CDCFE"/>
+                        <TextBox x:Name="AgentOutputBox" Text="Ready for execution..." IsReadOnly="True" AcceptsReturn="True" Height="280" Background="#252526" Foreground="#CE9178" BorderBrush="#3F3F3F" FontFamily="Consolas"/>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- Tab 4: Gemini / OpenAI Clients -->
+                <TabItem Header="Gemini &amp; OpenAI">
                     <Grid ColumnDefinitions="*, *">
-                        <Border Grid.Column="0" BorderBrush="#3F3F3F" BorderThickness="0,0,1,0" Padding="10">
+                        <Border Grid.Column="0" Padding="10" BorderBrush="#3F3F3F" BorderThickness="0,0,1,0">
                             <StackPanel Spacing="10">
-                                <TextBlock Text="📁 Package Explorer" FontWeight="Bold" Foreground="#4EC9B0"/>
-                                <ListBox x:Name="FileExplorerList" Height="350" Background="#252526" Foreground="White">
-                                    <ListBoxItem Content="src/core/NavigationController.cs"/>
-                                    <ListBoxItem Content="src/service/PersistenceService.cs"/>
-                                    <ListBoxItem Content="src/service/GitService.cs"/>
-                                    <ListBoxItem Content="src/ai/LocalAgent.cs"/>
-                                    <ListBoxItem Content="QLM/agent_core.json"/>
-                                </ListBox>
-                                <Button Content="Refresh Tree" Click="OnRefreshExplorer" Background="#333333" Foreground="White"/>
+                                <TextBlock Text="Gemini Client" FontWeight="Bold" Foreground="#4EC9B0"/>
+                                <TextBox x:Name="GeminiInput" Text="Prompt for Gemini..." Background="#252526" Foreground="White" Height="60" AcceptsReturn="True"/>
+                                <Button Content="Send to Gemini" Click="OnSendGemini" Background="#007ACC" Foreground="White"/>
+                                <TextBox x:Name="GeminiOutput" Text="Gemini response..." IsReadOnly="True" Height="180" Background="#252526" Foreground="#CE9178"/>
                             </StackPanel>
                         </Border>
                         <Border Grid.Column="1" Padding="10">
                             <StackPanel Spacing="10">
-                                <TextBlock Text="🗄️ SQLite DBMS Explorer" FontWeight="Bold" Foreground="#4EC9B0"/>
-                                <TextBox x:Name="SqlInputBox" Text="SELECT * FROM Settings;" Background="#252526" Foreground="White" BorderBrush="#3F3F3F" Height="60" AcceptsReturn="True"/>
-                                <Button Content="Run Query" Click="OnRunSql" Background="#007ACC" Foreground="White"/>
-                                <TextBox x:Name="SqlOutputBox" Text="Query results will appear here..." IsReadOnly="True" AcceptsReturn="True" Height="200" Background="#252526" Foreground="#4EC9B0" BorderBrush="#3F3F3F"/>
+                                <TextBlock Text="OpenAI Client" FontWeight="Bold" Foreground="#4EC9B0"/>
+                                <TextBox x:Name="OpenAIInput" Text="Prompt for OpenAI..." Background="#252526" Foreground="White" Height="60" AcceptsReturn="True"/>
+                                <Button Content="Send to OpenAI" Click="OnSendOpenAI" Background="#007ACC" Foreground="White"/>
+                                <TextBox x:Name="OpenAIOutput" Text="OpenAI response..." IsReadOnly="True" Height="180" Background="#252526" Foreground="#CE9178"/>
                             </StackPanel>
                         </Border>
                     </Grid>
                 </TabItem>
 
-                <!-- Tab 5: Git & Versions -->
-                <TabItem Header="Git &amp; Versions">
+                <!-- Tab 5: DBMS Explorer -->
+                <TabItem Header="DBMS Explorer">
                     <StackPanel Spacing="12" Margin="10">
-                        <TextBlock Text="Git Version Control &amp; Backups" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
-                        <StackPanel Orientation="Horizontal" Spacing="10">
-                            <Button Content="Git Status" Click="OnGitStatus" Background="#333333" Foreground="White"/>
-                            <Button Content="Create Backup Snapshot" Click="OnCreateBackup" Background="#333333" Foreground="White"/>
-                        </StackPanel>
-                        <TextBox x:Name="GitOutputBox" Text="Click 'Git Status' to check repository status..." IsReadOnly="True" AcceptsReturn="True" Height="350" Background="#252526" Foreground="#D4D4D4" BorderBrush="#3F3F3F" FontFamily="Consolas"/>
+                        <TextBlock Text="SQLite DBMS Explorer &amp; Query Console" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
+                        <TextBox x:Name="SqlInputBox" Text="SELECT * FROM Settings;" Background="#252526" Foreground="White" BorderBrush="#3F3F3F" Height="70" AcceptsReturn="True"/>
+                        <Button Content="Execute SQL Query" Click="OnRunSql" Background="#007ACC" Foreground="White"/>
+                        <TextBlock Text="Query Results:" FontWeight="Bold" Foreground="#9CDCFE"/>
+                        <TextBox x:Name="SqlOutputBox" Text="Results will appear here..." IsReadOnly="True" AcceptsReturn="True" Height="250" Background="#252526" Foreground="#4EC9B0" FontFamily="Consolas"/>
                     </StackPanel>
                 </TabItem>
 
-                <!-- Tab 6: Frameworks & Tools -->
-                <TabItem Header="Frameworks &amp; Tools">
+                <!-- Tab 6: Git & Versions -->
+                <TabItem Header="Git &amp; Versions">
+                    <StackPanel Spacing="12" Margin="10">
+                        <TextBlock Text="Git Version Control &amp; Version Management" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <Button Content="Run Git Status" Click="OnGitStatus" Background="#333333" Foreground="White"/>
+                            <Button Content="View Versions Log" Click="OnVersionsLog" Background="#333333" Foreground="White"/>
+                        </StackPanel>
+                        <TextBox x:Name="GitOutputBox" Text="Git status output..." IsReadOnly="True" AcceptsReturn="True" Height="320" Background="#252526" Foreground="#D4D4D4" FontFamily="Consolas"/>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- Tab 7: Saves & Backups -->
+                <TabItem Header="Saves &amp; Backups">
+                    <StackPanel Spacing="12" Margin="10">
+                        <TextBlock Text="Incremental Saves &amp; Backup Service" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
+                        <Button Content="Create Backup Snapshot (.bak)" Click="OnCreateBackup" Background="#007ACC" Foreground="White"/>
+                        <TextBox x:Name="BackupOutputBox" Text="Backup logs..." IsReadOnly="True" AcceptsReturn="True" Height="320" Background="#252526" Foreground="#4EC9B0" FontFamily="Consolas"/>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- Tab 8: Terminals & Shell -->
+                <TabItem Header="Terminals &amp; Shell">
+                    <StackPanel Spacing="12" Margin="10">
+                        <TextBlock Text="Terminal Pane &amp; SSQLM Scripting" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
+                        <TextBox x:Name="ShellInputBox" Text="echo 'Parcel C# Shell Active'" Background="#252526" Foreground="White" Height="50"/>
+                        <Button Content="Execute Shell Script" Click="OnRunShell" Background="#007ACC" Foreground="White"/>
+                        <TextBox x:Name="ShellOutputBox" Text="Shell output..." IsReadOnly="True" AcceptsReturn="True" Height="250" Background="#252526" Foreground="#CE9178" FontFamily="Consolas"/>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- Tab 9: Browser & WebStudio -->
+                <TabItem Header="Browser &amp; WebStudio">
+                    <StackPanel Spacing="12" Margin="10">
+                        <TextBlock Text="BrowserPane &amp; WebStudio Integration" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
+                        <TextBox x:Name="UrlInputBox" Text="https://github.com" Background="#252526" Foreground="White"/>
+                        <Button Content="Navigate URL" Click="OnNavigateUrl" Background="#007ACC" Foreground="White"/>
+                        <TextBox x:Name="BrowserOutputBox" Text="Browser loaded URL successfully [Simulated WebEngine]." IsReadOnly="True" Height="250" Background="#252526" Foreground="#9CDCFE"/>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- Tab 10: KDE, GTK, .NET, Inspection & Logcat -->
+                <TabItem Header="Frameworks &amp; OS">
                     <ScrollViewer>
                         <StackPanel Spacing="15" Margin="10">
-                            <TextBlock Text="Linux Frameworks &amp; Integration Managers" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
-                            <TextBlock Text="Manage KDE, GTK (2/3/4), .NET, WebStudio, and Logcat inspection tools." Foreground="#D4D4D4"/>
-
-                            <WrapPanel ItemWidth="200" ItemHeight="100">
-                                <Button Content="KDE Manager" Click="OnKDE" Width="180" Height="80" Background="#2D2D2D" Foreground="White"/>
-                                <Button Content="GTK4 Manager" Click="OnGTK4" Width="180" Height="80" Background="#2D2D2D" Foreground="White"/>
-                                <Button Content=".NET Manager" Click="OnDotNet" Width="180" Height="80" Background="#2D2D2D" Foreground="White"/>
-                                <Button Content="WebStudio Pane" Click="OnWebStudio" Width="180" Height="80" Background="#2D2D2D" Foreground="White"/>
-                                <Button Content="Logcat &amp; Inspection" Click="OnLogcat" Width="180" Height="80" Background="#2D2D2D" Foreground="White"/>
-                                <Button Content="Terminal / Shell" Click="OnTerminal" Width="180" Height="80" Background="#2D2D2D" Foreground="White"/>
+                            <TextBlock Text="Frameworks, Inspection &amp; Logcat Panes" FontSize="20" FontWeight="Bold" Foreground="#4EC9B0"/>
+                            <WrapPanel ItemWidth="200" ItemHeight="90">
+                                <Button Content="KDE Pane" Click="OnKDE" Width="180" Height="70" Background="#2D2D2D" Foreground="White"/>
+                                <Button Content="GTK2 Pane" Click="OnGTK2" Width="180" Height="70" Background="#2D2D2D" Foreground="White"/>
+                                <Button Content="GTK3 Pane" Click="OnGTK3" Width="180" Height="70" Background="#2D2D2D" Foreground="White"/>
+                                <Button Content="GTK4 Pane" Click="OnGTK4" Width="180" Height="70" Background="#2D2D2D" Foreground="White"/>
+                                <Button Content=".NET Pane" Click="OnDotNet" Width="180" Height="70" Background="#2D2D2D" Foreground="White"/>
+                                <Button Content="Inspection Pane" Click="OnInspection" Width="180" Height="70" Background="#2D2D2D" Foreground="White"/>
+                                <Button Content="Logcat Pane" Click="OnLogcat" Width="180" Height="70" Background="#2D2D2D" Foreground="White"/>
                             </WrapPanel>
-
-                            <TextBox x:Name="ToolOutputBox" Text="Framework status log..." IsReadOnly="True" AcceptsReturn="True" Height="150" Background="#252526" Foreground="#9CDCFE" BorderBrush="#3F3F3F"/>
+                            <TextBox x:Name="FrameworkOutputBox" Text="Framework status..." IsReadOnly="True" Height="150" Background="#252526" Foreground="#4EC9B0" FontFamily="Consolas"/>
                         </StackPanel>
                     </ScrollViewer>
                 </TabItem>
