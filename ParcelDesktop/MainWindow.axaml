@@ -31,7 +31,7 @@
 
                 <Border Background="#2D2D2D" Padding="15" CornerRadius="5" BorderBrush="#3F3F3F" BorderThickness="1">
                     <StackPanel Spacing="10">
-                        <TextBlock Text="SS AI Agent Console & QLM Status" FontWeight="Bold" Foreground="#4EC9B0"/>
+                        <TextBlock Text="SS AI Agent Console &amp; QLM Status" FontWeight="Bold" Foreground="#4EC9B0"/>
                         <TextBox x:Name="AgentInputTextBox" Text="Analyze project architecture and ensure industrial resilience." Background="#1E1E1E" Foreground="White" BorderBrush="#3F3F3F"/>
                         <Button Content="Run Agent Analysis" Click="OnRunAgentClick" Background="#007ACC" Foreground="White"/>
                         <TextBox x:Name="AgentOutputTextBox" Text="Ready for AI execution..." IsReadOnly="True" AcceptsReturn="True" Height="150" Background="#1E1E1E" Foreground="#CE9178" BorderBrush="#3F3F3F"/>
