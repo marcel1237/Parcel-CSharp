@@ -4,11 +4,18 @@ namespace ParcelServices
 {
     public class GitService
     {
-        private readonly string _repoPath;
+        private string _repoPath = string.Empty;
 
         public GitService(string repoPath)
         {
-            _repoPath = repoPath;
+            SetRepository(repoPath);
+        }
+
+        public void SetRepository(string repoPath)
+        {
+            if (string.IsNullOrWhiteSpace(repoPath) || !Directory.Exists(repoPath))
+                throw new DirectoryNotFoundException($"Git working directory not found: {repoPath}");
+            _repoPath = Path.GetFullPath(repoPath);
         }
 
         public string RunGitCommand(string arguments)
@@ -31,7 +38,12 @@ namespace ParcelServices
             var error = process.StandardError.ReadToEnd();
             process.WaitForExit();
 
-            return string.IsNullOrEmpty(error) ? output : $"{output}\nError: {error}";
+            var result = string.IsNullOrWhiteSpace(output) ? string.Empty : output.TrimEnd();
+            if (!string.IsNullOrWhiteSpace(error))
+                result += $"{Environment.NewLine}Error: {error.TrimEnd()}";
+            if (process.ExitCode != 0)
+                result += $"{Environment.NewLine}Exit code: {process.ExitCode}";
+            return string.IsNullOrWhiteSpace(result) ? "Git command completed with no output." : result;
         }
 
         public string GetStatus() => RunGitCommand("status");

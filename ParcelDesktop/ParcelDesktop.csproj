@@ -21,4 +21,8 @@
     <ProjectReference Include="..\ParcelAIAgent\ParcelAIAgent.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\QLM\**\*.json" LinkBase="QLM" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>

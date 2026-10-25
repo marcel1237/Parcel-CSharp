@@ -1,0 +1,5 @@
+{
+  "agent": "SS AI Agent C#",
+  "version": "1.0.0",
+  "capabilities": ["multi-agent-orchestration", "qlm-enforcement", "sqlite-persistence"]
+}

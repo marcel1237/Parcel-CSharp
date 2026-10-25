@@ -54,5 +54,43 @@ namespace ParcelServices
             command.Parameters.AddWithValue("@key", key);
             return command.ExecuteScalar()?.ToString();
         }
+
+        public void SaveSession(string? workspacePath, string? openFilePath, int editorMode)
+        {
+            SaveSetting("WorkspacePath", workspacePath ?? string.Empty);
+            SaveSetting("OpenFilePath", openFilePath ?? string.Empty);
+            SaveSetting("EditorMode", editorMode.ToString(System.Globalization.CultureInfo.InvariantCulture));
+        }
+
+        public (string? WorkspacePath, string? OpenFilePath, int EditorMode) LoadSession()
+        {
+            var workspace = GetSetting("WorkspacePath");
+            var file = GetSetting("OpenFilePath");
+            var modeText = GetSetting("EditorMode");
+            return (
+                string.IsNullOrWhiteSpace(workspace) ? null : workspace,
+                string.IsNullOrWhiteSpace(file) ? null : file,
+                int.TryParse(modeText, out var mode) ? mode : 0);
+        }
+
+        public IReadOnlyList<string> ExecuteQuery(string sql)
+        {
+            if (string.IsNullOrWhiteSpace(sql))
+                throw new ArgumentException("SQL query is required.", nameof(sql));
+
+            using var connection = new SqliteConnection(_connectionString);
+            connection.Open();
+            using var command = connection.CreateCommand();
+            command.CommandText = sql;
+            using var reader = command.ExecuteReader();
+            var rows = new List<string>();
+            while (reader.Read())
+            {
+                var values = Enumerable.Range(0, reader.FieldCount)
+                    .Select(index => $"{reader.GetName(index)}={reader.GetValue(index)}");
+                rows.Add(string.Join(" | ", values));
+            }
+            return rows;
+        }
     }
 }
